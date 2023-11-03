@@ -1,0 +1,12 @@
+.slide {
+  margin-top: 20px;
+}
+
+.slide__left {
+  overflow: hidden;
+}
+
+.slide__img {
+  width: 100%;
+  border-radius: 10px;
+}

@@ -5,11 +5,21 @@
 
 .footer__container {
   padding: 50px 20px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .footer__container--left {
-  width: 25%;
+  position: relative;
+}
+
+.footer__container--left::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #ccc;
+  top: 0;
+  right: 0;
 }
 
 .footer__container--logo {
@@ -32,8 +42,7 @@
 }
 
 .footer__container--right {
-  width: 75%;
-  padding-left: 120px;
+  padding-left: 50px;
 }
 
 .footer__container--right-title {
@@ -42,6 +51,58 @@
 }
 
 .footer__container--right-item ul {
-  margin-top: 20px;
+  margin: 20px 0;
   list-style: none;
+}
+
+.footer__container--right-item ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: 0.5s linear;
+  position: relative;
+}
+
+.footer__container--right-item ul li::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+  width: 0;
+  height: 1px;
+  top: 100%;
+  left: 0;
+  transition: 0.5s linear;
+}
+
+.footer__container--right-item ul li:hover {
+  color: var(--primary-color);
+}
+
+.footer__container--right-item ul li:hover::after {
+  width: 100%;
+}
+
+.footer__container--contact ul {
+  display: flex;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.footer__container--contact i {
+  margin-right: 10px;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.copyright {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.copyright:hover {
+  color: var(--primary-color);
 }

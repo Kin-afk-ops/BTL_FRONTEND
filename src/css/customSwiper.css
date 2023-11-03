@@ -1,0 +1,11 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ccc !important;
+  background-color: white !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

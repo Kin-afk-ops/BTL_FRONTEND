@@ -1,11 +1,35 @@
 .swiper-button-prev,
 .swiper-button-next {
-  color: #ccc !important;
-  background-color: white !important;
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  color: #ccc;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.1s linear;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 25px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  width: 40px;
+  height: 40px;
+  color: var(--primary-color);
+  border: 1px solid #ccc;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
+  width: 20px;
+  height: 10px;
 }

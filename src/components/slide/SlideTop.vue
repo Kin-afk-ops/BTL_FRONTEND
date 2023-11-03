@@ -8,9 +8,11 @@
         :navigation="true"
         :pagination="{ clickable: true }"
         :scrollbar="{ draggable: true }"
-        @swiper="onSwiper"
-        @slideChange="onSlideChange"
         :loop="true"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false,
+        }"
       >
         <swiper-slide>
           <img
@@ -39,7 +41,20 @@
         </swiper-slide>
       </swiper>
     </div>
-    <div class="col c-4 slide__right"></div>
+    <div class="col c-4 slide__right">
+      <div class="slide__right--img">
+        <img
+          src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/ZaloPay11_392x156_1.jpg "
+          alt=""
+        />
+      </div>
+      <div class="slide__right--img">
+        <img
+          src="https://cdn0.fahasa.com/media/wysiwyg/Thang-10-2023/VNPAYFHS20_392x156_1.jpg "
+          alt=""
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -62,15 +77,7 @@ export default {
     SwiperSlide,
   },
   setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log("slide change");
-    };
     return {
-      onSwiper,
-      onSlideChange,
       modules: [Autoplay, Pagination, Navigation],
     };
   },

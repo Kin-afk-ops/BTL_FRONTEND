@@ -1,0 +1,11 @@
+.list {
+  width: 100%;
+}
+.list__title i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+.list__container {
+  margin-top: 20px;
+}

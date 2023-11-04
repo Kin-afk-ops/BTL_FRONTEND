@@ -162,6 +162,10 @@
   justify-content: center;
 }
 
+.header__icon--notify-li:hover {
+  background-color: #eeeeee;
+}
+
 .header__icon--notify-li i {
   font-size: 30px;
   color: #ff9933;

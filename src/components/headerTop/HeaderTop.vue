@@ -1,11 +1,11 @@
 <template>
   <div class="header">
-    <a class="img__banner" href="/">
+    <router-link class="img__banner" to="/">
       <img
         src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/FahasaSaleThu3T1123_W1_Header_1263x60.jpg"
         alt=""
       />
-    </a>
+    </router-link>
 
     <div class="header__content">
       <div class="header__left">

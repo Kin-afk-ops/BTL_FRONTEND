@@ -1,6 +1,5 @@
 <template>
   <div class="grid wide">
-    <h1>This is Products page</h1>
     <Filter />
     <list :title="title" />
   </div>

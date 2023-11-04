@@ -1,0 +1,23 @@
+.customer__info {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #ccc;
+}
+
+.customer__info img {
+  width: 225px;
+  height: 225px;
+  object-fit: contain;
+}
+
+.customer__info--info {
+  font-size: 18px;
+}
+
+.customer__info--info p {
+  padding: 10px 0;
+}
+
+.customer__info--info i {
+  margin-right: 20px;
+}

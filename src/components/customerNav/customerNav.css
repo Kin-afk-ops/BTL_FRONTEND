@@ -8,19 +8,28 @@
   list-style: none;
 }
 
-.customer__nav--content ul li {
+.customer__nav--router {
+  display: block;
   cursor: pointer;
   padding: 20px 0 20px 10px;
   transition: 0.3s linear;
 }
 
-.customer__nav--content ul li:hover {
-  background-color: var(--primary-color);
+.customer__nav--router {
+  text-decoration: none;
+  color: black;
+}
+
+.customer__nav--router:hover {
   color: white;
+}
+
+.customer__nav--router:hover {
+  background-color: var(--primary-color);
   transform: translateX(20px) translateY(-10px);
 }
 
-.customer__nav--content ul li.active {
+.customer__nav--router.active {
   background-color: var(--primary-color);
   color: white;
   transform: translateX(-20px) translateY(-10px);

@@ -27,3 +27,12 @@ html {
   align-items: center;
   font-weight: 600;
 }
+
+.hidden {
+  display: none;
+}
+
+.link__default {
+  text-decoration: none;
+  color: white;
+}

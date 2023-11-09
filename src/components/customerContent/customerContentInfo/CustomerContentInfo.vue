@@ -34,6 +34,13 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "CustomerContentInfo",
+};
+</script>
+
 <style>
 @import "./customerContentInfo.css";
 </style>

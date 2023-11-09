@@ -31,9 +31,11 @@ export default {
     modalDisplay(e) {
       e.preventDefault();
       this.$refs.modalHideBtn.classList.remove("hidden");
+      this.$refs.modalHideBtn.classList.add("display__flex");
     },
 
     modalHide() {
+      this.$refs.modalHideBtn.classList.remove("display__flex");
       this.$refs.modalHideBtn.classList.add("hidden");
     },
   },
@@ -41,4 +43,5 @@ export default {
 </script>
 <style>
 @import "./customerContentAccount.css";
+@import "../customerContent.css";
 </style>

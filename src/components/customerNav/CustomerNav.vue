@@ -4,12 +4,11 @@
     <hr />
     <div class="customer__nav--content">
       <ul>
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/info"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Thông tin của bạn
           </router-link>
@@ -17,60 +16,55 @@
 
         <hr />
 
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/edit"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Chỉnh sửa hồ sơ
           </router-link>
         </li>
         <hr />
 
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/account"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Chỉnh sửa tài khoản
           </router-link>
         </li>
         <hr />
 
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/order"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Đơn hàng của tôi
           </router-link>
         </li>
         <hr />
 
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/voucher"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Ví Voucher
           </router-link>
         </li>
         <hr />
 
-        <li>
+        <li @click="handleChangeNav">
           <router-link
             to="/customer/notification"
             class="customer__nav--router"
             active-class="active"
-            @click="changNav()"
           >
             Thông báo
           </router-link>
@@ -96,11 +90,8 @@ export default {
   },
 
   methods: {
-    changNav() {
-      this.isActive.info = !this.isActive.info;
-      if (this.isActive.info) {
-        console.log(this);
-      }
+    handleChangeNav() {
+      console.log(window.location.pathname);
     },
   },
 };

@@ -32,7 +32,11 @@ html {
   display: none;
 }
 
-.link__default {
+.display__flex {
+  display: flex;
+}
+
+.link {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }

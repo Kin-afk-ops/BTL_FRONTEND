@@ -2,18 +2,17 @@
   <div class="grid wide">
     <div class="row">
       <customer-nav />
-      <customer-content />
+      <router-view />
     </div>
   </div>
 </template>
 <script>
 import CustomerNav from "../../components/customerNav/CustomerNav.vue";
-import CustomerContent from "../../components/customerContent/CustomerContent.vue";
 
 export default {
+  name: "Customer",
   components: {
     CustomerNav,
-    CustomerContent,
   },
 };
 </script>

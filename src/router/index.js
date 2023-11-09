@@ -15,8 +15,36 @@ const routes = [
   },
 
   {
-    path: "/customer/:item",
+    path: "/customer",
     component: Customer,
+    children: [
+      {
+        name: "CustomerContentInfo",
+        path: "info",
+        component: () =>
+          import(
+            "../components/customerContent/customerContentInfo/CustomerContentInfo"
+          ),
+      },
+
+      {
+        name: "CustomerContentEdit",
+        path: "edit",
+        component: () =>
+          import(
+            "../components/customerContent/customerContentEdit/CustomerContentEdit"
+          ),
+      },
+
+      {
+        name: "CustomerContentAccount",
+        path: "account",
+        component: () =>
+          import(
+            "../components/customerContent/customerContentAccount/CustomerContentAccount"
+          ),
+      },
+    ],
   },
 ];
 

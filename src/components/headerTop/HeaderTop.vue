@@ -77,14 +77,16 @@
           <span>Tài khoản</span>
 
           <ul class="header__icon--user-list">
-            <div class="header__icon--user-header">
-              <img src="../../assets/default/default_avatar.png" alt="" />
-              <div>
-                <p class="header__icon--user-name">...</p>
-                <p class="header__icon--user-email">linh@gmail.com</p>
+            <router-link to="/customer/info" class="link">
+              <div class="header__icon--user-header">
+                <img src="../../assets/default/default_avatar.png" alt="" />
+                <div>
+                  <p class="header__icon--user-name">...</p>
+                  <p class="header__icon--user-email">linh@gmail.com</p>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
               </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
+            </router-link>
             <hr />
             <li class="header__icon--user-li">
               <i class="fa-solid fa-clipboard"></i>

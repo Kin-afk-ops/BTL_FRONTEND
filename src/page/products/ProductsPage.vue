@@ -1,21 +1,19 @@
 <template>
   <div class="grid wide">
     <Filter />
-    <list :title="title" />
+    <router-view :title="title" />
   </div>
 </template>
 
 <script>
-import List from "../../components/list/List.vue";
 import Filter from "../../components/filter/Filter.vue";
 export default {
   data: () => {
     return {
-      title: "Phật giáo",
+      title: "Tất cả sách",
     };
   },
   components: {
-    List,
     Filter,
   },
 };

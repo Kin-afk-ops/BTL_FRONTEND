@@ -1,3 +1,7 @@
+.filer {
+  padding-bottom: 0 !important;
+}
+
 .filer__list {
   display: flex;
   align-items: center;
@@ -7,8 +11,12 @@
   overflow: hidden;
 }
 
-.filer__list--item {
+.filer__list a {
+  height: 100%;
   flex: 1;
+}
+
+.filer__list--item {
   padding: 10px;
   cursor: pointer;
   height: 100%;
@@ -39,6 +47,6 @@
   width: 100%;
 }
 
-.filter__active.filer__list--item::after {
+.filter__active .filer__list--item::after {
   width: 100%;
 }

@@ -1,12 +1,5 @@
 <template>
   <div class="header">
-    <router-link class="img__banner" to="/">
-      <img
-        src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/FahasaSaleThu3T1123_W1_Header_1263x60.jpg"
-        alt=""
-      />
-    </router-link>
-
     <div class="header__content">
       <div class="header__left">
         <a href="/">
@@ -88,16 +81,14 @@
               </div>
             </router-link>
             <hr />
-            <li class="header__icon--user-li">
-              <i class="fa-solid fa-clipboard"></i>
-              <span class="header__icon--user-li-title">Đơn hàng của tôi</span>
-            </li>
-            <hr />
-
-            <li class="header__icon--user-li">
-              <i class="fa-solid fa-ticket"></i>
-              <span class="header__icon--user-li-title">Voucher của tôi</span>
-            </li>
+            <router-link to="/customer/order" class="link">
+              <li class="header__icon--user-li">
+                <i class="fa-solid fa-clipboard"></i>
+                <span class="header__icon--user-li-title"
+                  >Đơn hàng của tôi</span
+                >
+              </li>
+            </router-link>
             <hr />
 
             <li class="header__icon--user-li">

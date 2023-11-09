@@ -13,7 +13,7 @@ import List from "../../components/list/List.vue";
 export default {
   data: () => {
     return {
-      title: ["Sản phẩm mới nhất", "Phật giáo"],
+      title: ["Sách mới nhất", "Phật giáo"],
       icon: ["fa-solid fa-dharmachakra", "fa-solid fa-fire"],
     };
   },

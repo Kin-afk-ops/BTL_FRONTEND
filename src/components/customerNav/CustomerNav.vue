@@ -1,10 +1,10 @@
 <template>
-  <div class="col c-3 main__container">
+  <div class="customer__nav col c-3 main__container">
     <h1 class="customer__title">Tài khoản</h1>
     <hr />
     <div class="customer__nav--content">
       <ul>
-        <li @click="handleChangeNav">
+        <li>
           <router-link
             to="/customer/info"
             class="customer__nav--router"
@@ -16,7 +16,7 @@
 
         <hr />
 
-        <li @click="handleChangeNav">
+        <li>
           <router-link
             to="/customer/edit"
             class="customer__nav--router"
@@ -27,7 +27,7 @@
         </li>
         <hr />
 
-        <li @click="handleChangeNav">
+        <li>
           <router-link
             to="/customer/account"
             class="customer__nav--router"
@@ -38,7 +38,7 @@
         </li>
         <hr />
 
-        <li @click="handleChangeNav">
+        <li>
           <router-link
             to="/customer/order"
             class="customer__nav--router"
@@ -48,54 +48,10 @@
           </router-link>
         </li>
         <hr />
-
-        <li @click="handleChangeNav">
-          <router-link
-            to="/customer/voucher"
-            class="customer__nav--router"
-            active-class="active"
-          >
-            Ví Voucher
-          </router-link>
-        </li>
-        <hr />
-
-        <li @click="handleChangeNav">
-          <router-link
-            to="/customer/notification"
-            class="customer__nav--router"
-            active-class="active"
-          >
-            Thông báo
-          </router-link>
-        </li>
-        <hr />
       </ul>
     </div>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      isActive: {
-        info: false,
-        edit: false,
-        account: false,
-        order: false,
-        voucher: false,
-        notify: false,
-      },
-    };
-  },
-
-  methods: {
-    handleChangeNav() {
-      console.log(window.location.pathname);
-    },
-  },
-};
-</script>
 
 <style>
 @import "./customerNav.css";

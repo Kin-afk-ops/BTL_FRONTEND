@@ -39,10 +39,7 @@
   text-decoration: line-through;
 }
 
-.list__item--start {
-}
-
-.list__item--start i {
+.list__item--star i {
   color: #ccc;
 }
 

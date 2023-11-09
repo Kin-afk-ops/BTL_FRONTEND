@@ -5,13 +5,6 @@
   flex-direction: column;
   background-color: white;
 }
-.img__banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-color: #98cd7b;
-}
 .header__content {
   background-color: white;
   width: 1200px;

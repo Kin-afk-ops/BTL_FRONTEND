@@ -2,8 +2,13 @@
   <div class="customer__edit col c-9 main__container">
     <form action="">
       <div class="customer__edit--left">
-        <label for="">Cật nhật ảnh đại diện</label>
-        <input class="customer__edit--input" type="file" name="" id="" />
+        <label for="customer__edit--input">Cật nhật ảnh đại diện</label>
+        <input
+          class="customer__edit--input hidden"
+          type="file"
+          name=""
+          id="customer__edit--input"
+        />
         <img src="../../../assets/default/default_avatar.png" alt="" />
       </div>
       <div class="customer__edit--right">
@@ -24,13 +29,43 @@
         <input class="customer__edit--input" type="date" />
         <label for="">Địa chỉ</label>
         <input class="customer__edit--input" type="text" />
-        <button class="customer__edit--button" type="submit">
+        <button
+          class="customer__edit--button"
+          type="submit"
+          @click="modalDisplay"
+        >
           Lưu thay đổi
         </button>
       </div>
     </form>
+
+    <div class="customer__modal hidden" ref="modalHideBtn">
+      <div class="customer__modal--title">Bạn có muốn thay đổi hồ sơ?</div>
+      <div class="customer__modal--content">
+        <button class="customer__modal--hide" @click="modalHide">Huỷ</button>
+        <button class="customer__modal--agree">Thay đổi</button>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    modalDisplay(e) {
+      e.preventDefault();
+      this.$refs.modalHideBtn.classList.remove("hidden");
+      this.$refs.modalHideBtn.classList.add("display__flex");
+    },
+
+    modalHide() {
+      this.$refs.modalHideBtn.classList.remove("display__flex");
+      this.$refs.modalHideBtn.classList.add("hidden");
+    },
+  },
+};
+</script>
 <style>
 @import "./customerContentEdit.css";
+@import "../customerContent.css";
 </style>

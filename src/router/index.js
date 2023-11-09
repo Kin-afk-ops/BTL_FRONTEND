@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../page/home/HomePage";
 import Products from "../page/products/ProductsPage";
 import Customer from "../page/customer/CustomerPage";
+import Product from "../page/product/ProductPage";
 
 const routes = [
   {
@@ -12,6 +13,12 @@ const routes = [
   {
     path: "/products",
     component: Products,
+    children: [
+      {
+        path: ":item",
+        component: () => import("../components/list/List"),
+      },
+    ],
   },
 
   {
@@ -43,6 +50,25 @@ const routes = [
           import(
             "../components/customerContent/customerContentAccount/CustomerContentAccount"
           ),
+      },
+
+      {
+        name: "CustomerContentOrder",
+        path: "order",
+        component: () =>
+          import(
+            "../components/customerContent/customerContentOrder/CustomerContentOrder"
+          ),
+      },
+    ],
+  },
+  {
+    path: "/product",
+    component: Product,
+    children: [
+      {
+        path: ":path",
+        component: () => import("../components/productInfo/ProductInfo"),
       },
     ],
   },

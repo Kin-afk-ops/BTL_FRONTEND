@@ -41,7 +41,11 @@
           <ul class="header__icon--notify-list">
             <div class="header__icon--notify-header">
               <span class="header__icon--notify-title"> Thông báo </span>
-              <span class="header__icon--notify-all">Xem tất cả</span>
+              <router-link class="link" to="/customer/notification">
+                <span class="header__icon--notify-all"
+                  >Xem tất cả</span
+                ></router-link
+              >
             </div>
             <hr />
             <li class="header__icon--notify-li">

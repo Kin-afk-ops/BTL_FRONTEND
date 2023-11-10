@@ -1,7 +1,7 @@
 .customer__modal {
   position: fixed;
   background-color: white;
-  width: 30%;
+  min-width: 30%;
   flex-direction: column;
   justify-content: space-between;
   z-index: 999;

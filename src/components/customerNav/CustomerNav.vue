@@ -48,6 +48,16 @@
           </router-link>
         </li>
         <hr />
+
+        <li>
+          <router-link
+            to="/customer/notification"
+            class="customer__nav--router"
+            active-class="active"
+          >
+            Thông báo
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>

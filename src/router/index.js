@@ -60,6 +60,15 @@ const routes = [
             "../components/customerContent/customerContentOrder/CustomerContentOrder"
           ),
       },
+
+      {
+        name: "CustomerContentNotification",
+        path: "notification",
+        component: () =>
+          import(
+            "../components/customerContent/customerContentNotification/CustomerContentNotification"
+          ),
+      },
     ],
   },
   {
@@ -68,7 +77,18 @@ const routes = [
     children: [
       {
         path: ":path",
-        component: () => import("../components/productInfo/ProductInfo"),
+        components: {
+          "product-to-buy": () =>
+            import("../components/productToBuy/ProductToBuy"),
+
+          "product-list-auth": () =>
+            import("../components/listSlide/ListSlide"),
+
+          "product-list-categories": () =>
+            import("../components/listSlide/ListSlide"),
+
+          "product-info": () => import("../components/productInfo/ProductInfo"),
+        },
       },
     ],
   },

@@ -298,5 +298,4 @@ export default {
 </script>
 <style>
 @import "./customerContentNotification.css";
-@import "../customerContent.css";
 </style>

@@ -67,5 +67,4 @@ export default {
 </script>
 <style>
 @import "./customerContentEdit.css";
-@import "../customerContent.css";
 </style>

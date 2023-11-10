@@ -24,7 +24,7 @@
           <p>Nhà cung cấp: <b>Saigon Book</b></p>
           <p>Nhà xuất bản: <b>Thế giới</b></p>
 
-          <div class="product__buy--start">
+          <div class="product__buy--star">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>

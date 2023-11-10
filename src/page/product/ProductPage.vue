@@ -4,6 +4,8 @@
     <router-view name="product-list-auth" title="Cùng tác giả" />
     <router-view name="product-list-categories" title="Cùng thể loại" />
     <router-view name="product-info" />
+    <router-view name="product-desc" />
+    <router-view name="product-evaluate" />
   </div>
 </template>
 <script>

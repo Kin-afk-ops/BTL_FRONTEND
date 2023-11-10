@@ -79,15 +79,23 @@ const routes = [
         path: ":path",
         components: {
           "product-to-buy": () =>
-            import("../components/productToBuy/ProductToBuy"),
+            import("../components/productComponents/productToBuy/ProductToBuy"),
 
           "product-list-auth": () =>
-            import("../components/listSlide/ListSlide"),
+            import("../components//listSlide/ListSlide"),
 
           "product-list-categories": () =>
             import("../components/listSlide/ListSlide"),
 
-          "product-info": () => import("../components/productInfo/ProductInfo"),
+          "product-info": () =>
+            import("../components/productComponents/productInfo/ProductInfo"),
+          "product-desc": () =>
+            import("../components/productComponents/productDesc/ProductDesc"),
+
+          "product-evaluate": () =>
+            import(
+              "../components/productComponents/productEvaluate/ProductEvaluate"
+            ),
         },
       },
     ],

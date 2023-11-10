@@ -62,5 +62,4 @@ export default {
 </script>
 <style>
 @import "./customerContentOrder.css";
-@import "../customerContent.css";
 </style>

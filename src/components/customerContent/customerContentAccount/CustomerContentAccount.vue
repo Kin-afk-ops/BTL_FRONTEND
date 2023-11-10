@@ -43,5 +43,4 @@ export default {
 </script>
 <style>
 @import "./customerContentAccount.css";
-@import "../customerContent.css";
 </style>

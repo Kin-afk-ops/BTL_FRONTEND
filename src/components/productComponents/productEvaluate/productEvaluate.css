@@ -1,0 +1,54 @@
+.product__evaluate {
+}
+
+.product__evaluate--content {
+  padding: 20px;
+}
+
+.product__evaluate--left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product__evaluate--number {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.product__evaluate--big {
+  font-size: 60px;
+}
+
+.product__evaluate--star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product__evaluate--star i {
+  color: #ccc;
+}
+
+.product__evaluate--star span {
+  color: coral;
+}
+
+.product__evaluate--right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__evaluate--right button {
+  width: 360px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: white;
+}
+
+.product__evaluate--right i {
+  margin-right: 10px;
+}

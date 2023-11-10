@@ -6,6 +6,7 @@
     <router-view name="product-info" />
     <router-view name="product-desc" />
     <router-view name="product-evaluate" />
+    <router-view name="product-comment" />
   </div>
 </template>
 <script>

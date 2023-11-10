@@ -96,6 +96,11 @@ const routes = [
             import(
               "../components/productComponents/productEvaluate/ProductEvaluate"
             ),
+
+          "product-comment": () =>
+            import(
+              "../components/productComponents/productComment/ProductComment"
+            ),
         },
       },
     ],

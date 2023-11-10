@@ -1,0 +1,33 @@
+.product__comment--wrap {
+  padding: 0 20px;
+}
+
+.product__comment--title {
+  font-weight: 600;
+}
+
+.product__comment--list {
+  list-style: none;
+  border-radius: 10px;
+  max-height: 360px;
+  overflow-y: scroll;
+}
+
+.product__comment--item {
+  padding: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.product__comment--name {
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-bottom: 20px;
+}
+
+.product__comment--content {
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}

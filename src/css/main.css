@@ -38,12 +38,23 @@ body {
   font-weight: 600;
 }
 
+.img__main {
+  width: 100px;
+  height: 100px;
+}
+
 .hidden {
   display: none;
 }
 
 .display__flex {
   display: flex;
+}
+
+.display__flex--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .link {

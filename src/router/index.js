@@ -4,6 +4,7 @@ import Home from "../page/home/HomePage";
 import Products from "../page/products/ProductsPage";
 import Customer from "../page/customer/CustomerPage";
 import Product from "../page/product/ProductPage";
+import Cart from "../page/cart/CartPage";
 
 const routes = [
   {
@@ -102,6 +103,15 @@ const routes = [
               "../components/productComponents/productComment/ProductComment"
             ),
         },
+      },
+    ],
+  },
+  {
+    path: "/cart",
+    children: [
+      {
+        path: "",
+        component: Cart,
       },
     ],
   },

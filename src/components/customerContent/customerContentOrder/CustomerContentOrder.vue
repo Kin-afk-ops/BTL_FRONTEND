@@ -6,7 +6,7 @@
       <ul class="content__order--list">
         <li class="content__order--list-item row">
           <img
-            class="content__order--img"
+            class="img__main"
             src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935278607311.jpg"
             alt=""
           />

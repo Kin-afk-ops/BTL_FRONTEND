@@ -19,11 +19,6 @@
   padding: 20px 0;
 }
 
-.content__order--img {
-  width: 100px;
-  height: 100px;
-}
-
 .content__order--desc {
   display: flex;
   flex-direction: column;

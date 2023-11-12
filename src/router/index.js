@@ -5,6 +5,7 @@ import Products from "../page/products/ProductsPage";
 import Customer from "../page/customer/CustomerPage";
 import Product from "../page/product/ProductPage";
 import Cart from "../page/cart/CartPage";
+import Pay from "../page/pay/PayPage";
 
 const routes = [
   {
@@ -114,6 +115,11 @@ const routes = [
         component: Cart,
       },
     ],
+  },
+  {
+    path: "/pay/:method",
+    component: Pay,
+    name: "payMethod",
   },
 ];
 

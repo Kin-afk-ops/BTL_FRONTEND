@@ -43,6 +43,11 @@ body {
   height: 100px;
 }
 
+.logo__main {
+  width: 30px;
+  height: 30px;
+}
+
 .hidden {
   display: none;
 }
@@ -55,6 +60,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.display__block {
+  display: block !important;
 }
 
 .link {
@@ -141,4 +150,9 @@ body {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

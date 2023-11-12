@@ -63,11 +63,13 @@
           </ul>
         </div>
 
-        <div class="header__icon">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span> Giỏ hàng</span>
-          <div class="header__icon--total header__icon--total-cart">3</div>
-        </div>
+        <router-link to="/cart" class="link">
+          <div class="header__icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span> Giỏ hàng</span>
+            <div class="header__icon--total header__icon--total-cart">3</div>
+          </div>
+        </router-link>
 
         <div class="header__icon">
           <i class="fa-solid fa-user"></i>

@@ -1,16 +1,14 @@
 <template>
   <div class="cart__content main__container">
-    <div class="main__container--title main__title">
-      <input type="checkbox" @click="select" v-model="selectAll" />
-      <p>Chọn tất cả sản phẩm</p>
+    <div class="cart__content--title main__title row no-gutters">
+      <input type="checkbox" @click="select" v-model="selectAll" class="c-1" />
+      <p class="c-5">Chọn tất cả sản phẩm</p>
+      <p class="c-2 display__flex--center">Số lượng</p>
+      <p class="c-2 display__flex--center">Thành tiền</p>
       <div
         class="cart__content--container-item-delete display__flex--center c-2"
       >
-        <i
-          :class="{ hidden: !selectMode }"
-          @click="handleDelete"
-          class="fa-solid fa-trash"
-        ></i>
+        <i @click="handleDelete" class="fa-solid fa-trash"></i>
       </div>
     </div>
     <hr />
@@ -21,7 +19,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="1" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="1"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -55,7 +58,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="2" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="2"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -89,7 +97,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="3" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="3"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -123,7 +136,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="4" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="4"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -157,7 +175,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="5" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="5"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -191,7 +214,12 @@
           <div
             class="cart__content--container-item-input display__flex--center c-1"
           >
-            <input type="checkbox" value="6" v-model="selected" />
+            <input
+              type="checkbox"
+              @change="handleChangMoney($event)"
+              value="6"
+              v-model="selected"
+            />
           </div>
           <img
             class="img__main c-1"
@@ -230,13 +258,11 @@ import CartDelete from "./CartDelete";
 
 export default {
   data() {
-    let selected = [];
     return {
       selectAll: false,
-      selected,
+      selected: [],
       data: [1, 2, 3, 4, 5, 6],
       modal: false,
-      selectMode: selected.length !== 0 ? true : false,
     };
   },
 
@@ -251,12 +277,21 @@ export default {
         this.data.forEach((d) => {
           this.selected.push(d);
         });
+        this.$emit("change-money", this.selected);
       }
     },
 
     handleDelete() {
       if (this.selected.length !== 0) {
         this.modal = true;
+      }
+    },
+
+    handleChangMoney(event) {
+      if (event.target.checked) {
+        this.$emit("change-money", this.selected);
+      } else {
+        this.$emit("change-money", this.selected);
       }
     },
   },

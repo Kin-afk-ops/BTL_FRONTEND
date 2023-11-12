@@ -1,5 +1,5 @@
 .cart__top {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 .cart__top--title {

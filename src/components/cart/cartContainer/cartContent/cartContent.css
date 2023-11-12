@@ -1,17 +1,14 @@
-.main__container--title {
+.cart__content--title {
   font-size: 18px;
-  display: flex;
+  padding-left: 0 !important;
 }
 
-.main__container--title input {
+.cart__content--title input {
   width: 25px;
   height: 25px;
-  margin-right: 20px;
   cursor: pointer;
 }
 
-.cart__content--container {
-}
 .cart__content--container-list {
   list-style: none;
 }

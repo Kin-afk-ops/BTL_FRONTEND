@@ -9,16 +9,6 @@
             class="header__logo--img"
           />
         </a>
-        <div class="header__categories">
-          <img
-            src="https://www.fahasa.com//skin/frontend/ma_vanese/fahasa/images/ico_menu.svg"
-            alt=""
-            class="header__categories--img"
-          />
-          <div class="header__categories--icon-down">
-            <i class="fa-solid fa-angle-down"></i>
-          </div>
-        </div>
       </div>
 
       <div class="header__center">

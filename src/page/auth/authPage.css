@@ -1,0 +1,37 @@
+.arrow__home {
+  position: fixed;
+  z-index: 999;
+  top: 20px;
+  left: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.3s linear;
+  border: 1px solid transparent;
+}
+
+.arrow__home:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.arrow__home i {
+  font-size: 30px;
+}
+
+.arrow__home p {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 0 !important;
+  background-color: #eee !important;
+}

@@ -30,20 +30,7 @@
   align-items: center;
   cursor: pointer;
 }
-.header__categories--img {
-  width: 36px;
-  height: 36px;
-}
-.header__categories--icon-down i {
-  color: #7a7e7f;
-  font-size: 20px;
-  font-weight: bold;
-  transition: 0.3s linear;
-}
 
-.header__categories:hover .header__categories--icon-down i {
-  transform: rotate(180deg);
-}
 .header__center {
   flex: 1;
   display: flex;

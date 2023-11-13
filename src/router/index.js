@@ -6,6 +6,7 @@ import Customer from "../page/customer/CustomerPage";
 import Product from "../page/product/ProductPage";
 import Cart from "../page/cart/CartPage";
 import Pay from "../page/pay/PayPage";
+import Auth from "../page/auth/AuthPage";
 
 const routes = [
   {
@@ -120,6 +121,31 @@ const routes = [
     path: "/pay/:method",
     component: Pay,
     name: "payMethod",
+  },
+
+  {
+    path: "/auth",
+    component: Auth,
+    children: [
+      {
+        name: "register",
+        path: "register",
+        component: () => import("../components/auth/register/Register"),
+      },
+
+      {
+        name: "login",
+        path: "login",
+        component: () => import("../components/auth/login/Login"),
+      },
+
+      {
+        name: "forgetPassword",
+        path: "forget-password",
+        component: () =>
+          import("../components/auth/forgetPassword/ForgetPassword"),
+      },
+    ],
   },
 ];
 

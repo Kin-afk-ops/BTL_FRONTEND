@@ -1,7 +1,7 @@
 <template>
-  <header-top />
+  <header-top v-if="!visitorMode" />
   <router-view />
-  <footer-bottom />
+  <footer-bottom v-if="!visitorMode" />
 </template>
 
 <script>
@@ -13,6 +13,18 @@ export default {
   components: {
     HeaderTop,
     FooterBottom,
+  },
+
+  computed: {
+    visitorMode() {
+      let visitor = false;
+      const path = window.location.pathname.split("/")[2];
+      if (path === "register" || path === "login") {
+        visitor = true;
+      }
+
+      return visitor;
+    },
   },
 };
 </script>

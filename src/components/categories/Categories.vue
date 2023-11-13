@@ -39,7 +39,7 @@
           src="https://cdn0.fahasa.com/media/wysiwyg/Duy-VHDT/9786043654370.jpg"
           alt=""
         />
-        <router-link to="/product/xu-huong-kinh-te" class="link">
+        <router-link to="/products/xu-huong-kinh-te" class="link">
           <p>
             Xu hướng <br />
             kinh tế

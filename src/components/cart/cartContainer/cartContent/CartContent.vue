@@ -1,6 +1,9 @@
 <template>
   <div class="cart__content main__container">
-    <div class="cart__content--title main__title row no-gutters">
+    <div
+      class="cart__content--title main__title row no-gutters"
+      v-if="!payMode"
+    >
       <input type="checkbox" @click="select" v-model="selectAll" class="c-1" />
       <p class="c-5">Chọn tất cả sản phẩm</p>
       <p class="c-2 display__flex--center">Số lượng</p>
@@ -20,6 +23,7 @@
             class="cart__content--container-item-input display__flex--center c-1"
           >
             <input
+              v-if="!payMode"
               type="checkbox"
               @change="handleChangMoney($event)"
               value="1"
@@ -257,6 +261,8 @@
 import CartDelete from "./CartDelete";
 
 export default {
+  props: ["payMode"],
+
   data() {
     return {
       selectAll: false,

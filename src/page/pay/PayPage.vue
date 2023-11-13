@@ -4,8 +4,8 @@
       <h1 class="main__title pay__title">ĐỊA CHỈ GIAO HÀNG</h1>
       <hr />
 
-      <div class="row no-gutters">
-        <form action="" class="pay__form c-6">
+      <form action="" class="pay__form">
+        <div class="pay__form--wrap c-6">
           <label class="pay__form--label" for="">Họ và tên người nhận</label>
           <input class="pay__input" type="text" />
           <label class="pay__form--label" for="">Số điện thoại</label>
@@ -18,11 +18,17 @@
 
           <label class="pay__form--label" for="">Ghi chú</label>
           <input class="pay__input" type="text" />
+        </div>
 
-          <div class="pay__total--money">
-            Tổng giá tiền:
-            <span>{{ makeMoney }} đ</span>
-          </div>
+        <h3 class="main__title">Xem lại giỏ hàng</h3>
+        <cart-content :payMode="payMode" />
+
+        <div class="pay__total--money">
+          Tổng giá tiền:
+          <span>{{ makeMoney }} đ</span>
+        </div>
+
+        <div class="pay__method">
           <router-link
             to="/haha"
             class="main__btn link"
@@ -48,22 +54,17 @@
             </div></router-link
           >
           <div v-else>
-            <button class="main__btn pay__btn pay__default">
+            <button
+              class="main__btn pay__btn pay__default"
+              @click="handlePostOrder($event)"
+              type="submit"
+            >
               <i class="fa-solid fa-hand-holding-dollar"></i>
-              Thanh toán băng tiền mặt
+              Mua hàng
             </button>
           </div>
-        </form>
-      </div>
-      <div class="customer__modal hidden" ref="modalHideBtn">
-        <div class="customer__modal--title">Bạn có muốn thay đổi hồ sơ?</div>
-        <div class="customer__modal--content">
-          <button class="customer__modal--hide">Huỷ</button>
-          <button class="customer__modal--agree">Thay đổi</button>
         </div>
-      </div>
-
-      <cart-content />
+      </form>
     </div>
   </div>
 </template>
@@ -76,12 +77,22 @@ export default {
   data() {
     return {
       typePay: window.location.pathname.split("/")[2],
+      payMode: true,
+      modal: false,
     };
   },
 
   components: {
     CartContent,
   },
+
+  methods: {
+    handlePostOrder(e) {
+      e.preventDefault();
+      console.log("post");
+    },
+  },
+
   computed: {
     makeMoney() {
       const route = useRoute();

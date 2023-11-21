@@ -11,11 +11,19 @@ import Auth from "../page/auth/AuthPage";
 const routes = [
   {
     path: "/",
-    component: Home,
+    components: {
+      default: Home,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
   },
   {
     path: "/products",
-    component: Products,
+    components: {
+      default: Products,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
     children: [
       {
         path: ":item",
@@ -26,7 +34,11 @@ const routes = [
 
   {
     path: "/customer",
-    component: Customer,
+    components: {
+      default: Customer,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
     children: [
       {
         name: "CustomerContentInfo",
@@ -76,7 +88,11 @@ const routes = [
   },
   {
     path: "/product",
-    component: Product,
+    components: {
+      default: Product,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
     children: [
       {
         path: ":path",
@@ -109,17 +125,20 @@ const routes = [
     ],
   },
   {
-    path: "/cart",
-    children: [
-      {
-        path: "",
-        component: Cart,
-      },
-    ],
+    path: "/cart/:id",
+    components: {
+      default: Cart,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
   },
   {
     path: "/pay/:method",
-    component: Pay,
+    components: {
+      default: Pay,
+      "header-top": () => import("../components/headerTop/HeaderTop"),
+      "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
+    },
     name: "payMethod",
   },
 

@@ -23,5 +23,8 @@ export default {
     Categories,
     List,
   },
+  created() {
+    console.log(this.$store);
+  },
 };
 </script>

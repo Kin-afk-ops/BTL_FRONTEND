@@ -13,18 +13,6 @@
             Thông tin của bạn
           </router-link>
         </li>
-
-        <hr />
-
-        <li>
-          <router-link
-            to="/customer/edit"
-            class="customer__nav--router"
-            active-class="active"
-          >
-            Chỉnh sửa hồ sơ
-          </router-link>
-        </li>
         <hr />
 
         <li>
@@ -34,6 +22,17 @@
             active-class="active"
           >
             Chỉnh sửa tài khoản
+          </router-link>
+        </li>
+        <hr />
+
+        <li>
+          <router-link
+            to="/customer/edit"
+            class="customer__nav--router"
+            active-class="active"
+          >
+            Chỉnh sửa hồ sơ
           </router-link>
         </li>
         <hr />

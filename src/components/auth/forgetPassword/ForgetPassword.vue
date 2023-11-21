@@ -6,7 +6,7 @@
     </div>
   </router-link>
   <div class="main__container register__container">
-    <h1 class="register__title main__title">Đăng ký</h1>
+    <h1 class="register__title main__title">Quên mật khẩu</h1>
     <hr />
 
     <div class="register__content">

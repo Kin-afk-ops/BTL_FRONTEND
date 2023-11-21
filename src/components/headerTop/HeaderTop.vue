@@ -67,17 +67,17 @@
 
           <ul class="header__icon--user-list">
             <router-link to="/customer/info" class="link">
-              <div class="header__icon--user-header">
+              <div class="header__icon--user-header" v-if="user">
                 <img src="../../assets/default/default_avatar.png" alt="" />
                 <div>
-                  <p class="header__icon--user-name">...</p>
-                  <p class="header__icon--user-email">linh@gmail.com</p>
+                  <p class="header__icon--user-name">{{ username }}</p>
+                  <p class="header__icon--user-email">{{ email }}</p>
                 </div>
                 <i class="fa-solid fa-chevron-right"></i>
               </div>
             </router-link>
-            <hr />
-            <router-link to="/customer/order" class="link">
+            <hr v-if="user" />
+            <router-link to="/customer/order" class="link" v-if="user">
               <li class="header__icon--user-li">
                 <i class="fa-solid fa-clipboard"></i>
                 <span class="header__icon--user-li-title"
@@ -85,30 +85,69 @@
                 >
               </li>
             </router-link>
-            <hr />
+            <hr v-if="user" />
 
-            <li class="header__icon--user-li">
+            <router-link to="/auth/login" class="link" v-if="!user">
+              <li class="header__icon--user-li" @click="handleLogin">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <span class="header__icon--user-li-title">Đăng nhập</span>
+              </li>
+            </router-link>
+            <hr v-if="!user" />
+
+            <li class="header__icon--user-li" v-if="user" @click="handleLogout">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
               <span class="header__icon--user-li-title">Đăng xuất</span>
             </li>
-            <hr />
-            <li class="header__icon--user-li">
-              <i class="fa-solid fa-arrow-right-to-bracket"></i>
-              <span class="header__icon--user-li-title">Đăng nhập</span>
-            </li>
-            <hr />
+            <hr v-if="user" />
 
-            <li class="header__icon--user-li">
-              <i class="fa-regular fa-address-card"></i>
-              <span class="header__icon--user-li-title">Đăng kí</span>
-            </li>
+            <router-link to="/auth/register" class="link" v-if="!user">
+              <li class="header__icon--user-li">
+                <i class="fa-regular fa-address-card"></i>
+                <span class="header__icon--user-li-title">Đăng kí</span>
+              </li>
+            </router-link>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script></script>
+<script>
+import axios from "axios";
+
+import { mapGetters } from "vuex";
+
+export default {
+  data() {
+    return {
+      username: "",
+      email: "",
+    };
+  },
+
+  async created() {
+    const res2 = await axios.get(`info/${this.user._id}`);
+    res2.data.lastName === " " || res2.data.firstName === " "
+      ? (this.username = "...")
+      : (this.username = `${res2.data.lastName} ${res2.data.firstName}`);
+    this.email = this.user.email;
+  },
+
+  methods: {
+    handleLogout() {
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
+      this.$store.dispatch("user", null);
+      this.$router.push("/auth/login");
+    },
+  },
+
+  computed: {
+    ...mapGetters(["user"]),
+  },
+};
+</script>
 <style>
 @import "./headerTop.css";
 </style>

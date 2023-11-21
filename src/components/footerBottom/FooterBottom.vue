@@ -26,10 +26,8 @@
         <div class="row footer__container--right c-9">
           <div class="col l-4 footer__container--right-item">
             <p class="footer__container--right-title">DỊCH VỤ</p>
+
             <ul>
-              <li>Điều khoản sử dụng</li>
-              <li>Chính sách bảo mật thông tin cá nhân</li>
-              <li>Chính sách bảo mật thanh toán</li>
               <li>Giới thiệu về <b>toidocsach</b></li>
             </ul>
           </div>
@@ -37,10 +35,10 @@
           <div class="col l-4 footer__container--right-item">
             <p class="footer__container--right-title">HỖ TRỢ</p>
             <ul>
-              <li>Chính sách đổi - trả - hoàn tiền</li>
-              <li>Chính sách bảo hành - bồi hoàn</li>
-              <li>Chính sách vận chuyển</li>
-              <li>Phương thức thanh toán</li>
+              <li>Giao hàng đi toàn quốc</li>
+              <li>Đổi trả trong 7 ngày</li>
+              <li>Hoàn tiền 100%</li>
+              <li>Thanh toán băng tiền mặt, VNPAY và MOMO</li>
             </ul>
           </div>
 

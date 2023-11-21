@@ -14,7 +14,7 @@
             :class="{ disabled: length === 0 }"
             class="link main__btn router-btn vnpay__btn"
             :to="{
-              path: 'pay/vnpay',
+              path: '/pay/vnpay',
               query: { money: money },
             }"
           >
@@ -29,7 +29,7 @@
             class="link main__btn router-btn momo__btn"
             :class="{ disabled: length === 0 }"
             :to="{
-              path: 'pay/momo',
+              path: '/pay/momo',
               query: { money: money },
             }"
           >
@@ -42,7 +42,7 @@
           <router-link
             :class="{ disabled: length === 0 }"
             :to="{
-              path: 'pay/default',
+              path: '/pay/default',
               query: { money: money },
             }"
             class="link main__btn router-btn pay__default"

@@ -13,7 +13,7 @@
 .categories ul li {
   display: flex;
   flex-direction: column;
-  width: 120px;
+  width: 140px;
   text-align: center;
   justify-content: center;
   align-items: center;

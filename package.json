@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "axios": "^1.6.2",
     "core-js": "^3.8.3",
     "currency.js": "^2.0.4",
     "swiper": "^11.0.3",
@@ -43,7 +44,8 @@
       "prettier"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false
     },
     "rules": {
       "vue/multi-word-component-names": "off"

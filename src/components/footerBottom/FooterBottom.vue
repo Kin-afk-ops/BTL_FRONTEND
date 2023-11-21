@@ -5,7 +5,7 @@
         <div class="col l-3 footer__container--left c-3">
           <img
             class="footer__container--logo"
-            src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo.png"
+            src="../../assets/default/toi_doc_sach_logo.png"
           />
           <p>
             Lầu 3, số 4/9A đường Mậu Thân, phường Xuân Khánh, quận Ninh Kiều,

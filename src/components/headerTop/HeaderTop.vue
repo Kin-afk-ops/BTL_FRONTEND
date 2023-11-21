@@ -4,7 +4,7 @@
       <div class="header__left">
         <a href="/">
           <img
-            src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fahasa-logo.png"
+            src="../../assets/default/toi_doc_sach_logo.png"
             alt=""
             class="header__logo--img"
           />

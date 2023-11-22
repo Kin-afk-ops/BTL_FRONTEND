@@ -4,20 +4,22 @@
       <h1 class="main__title pay__title">ĐỊA CHỈ GIAO HÀNG</h1>
       <hr />
 
-      <form action="" class="pay__form">
+      <form action="" class="pay__form" @submit.prevent="handleSubmit">
         <div class="pay__form--wrap c-6">
           <label class="pay__form--label" for="">Họ và tên người nhận</label>
-          <input class="pay__input" type="text" />
+          <input
+            v-model="clientInfo.clientName"
+            class="pay__input"
+            type="text"
+          />
           <label class="pay__form--label" for="">Số điện thoại</label>
-          <input class="pay__input" type="text" />
+          <input v-model="clientInfo.phone" class="pay__input" type="text" />
 
           <label class="pay__form--label" for="">Địa chỉ giao hàng</label>
-          <input class="pay__input" type="text" />
-          <label class="pay__form--label" for="">Địa chỉ</label>
-          <input class="pay__input" type="text" />
+          <input v-model="clientInfo.address" class="pay__input" type="text" />
 
           <label class="pay__form--label" for="">Ghi chú</label>
-          <input class="pay__input" type="text" />
+          <input v-model="clientInfo.note" class="pay__input" type="text" />
         </div>
 
         <h3 class="main__title">Xem lại giỏ hàng</h3>
@@ -29,40 +31,10 @@
         </div>
 
         <div class="pay__method">
-          <router-link
-            to="/haha"
-            class="main__btn link"
-            v-if="typePay === 'vnpay'"
-            ><div class="main__btn pay__btn pay__vnpay">
-              <img
-                class="logo__main card__pay--img"
-                src="../../assets/default/vnpay__logo.png"
-                alt=""
-              />
-              Thanh toán bằng ví VNPAY
-            </div></router-link
-          >
-
-          <router-link to="/haha" class="link" v-else-if="typePay === 'momo'"
-            ><div class="main__btn pay__btn pay__momo">
-              <img
-                class="logo__main card__pay--img"
-                src="../../assets/default/momo__logo.png"
-                alt=""
-              />
-              Thanh toán bằng ví MOMO
-            </div></router-link
-          >
-          <div v-else>
-            <button
-              class="main__btn pay__btn pay__default"
-              @click="handlePostOrder($event)"
-              type="submit"
-            >
-              <i class="fa-solid fa-hand-holding-dollar"></i>
-              Mua hàng
-            </button>
-          </div>
+          <button class="main__btn pay__btn pay__default" type="submit">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+            Mua hàng
+          </button>
         </div>
       </form>
     </div>
@@ -70,7 +42,8 @@
 </template>
 
 <script>
-import { useRoute } from "vue-router";
+import axios from "axios";
+import { mapGetters } from "vuex";
 import CartContent from "../../components/cart/cartContainer/cartContent/CartContent";
 
 export default {
@@ -79,6 +52,15 @@ export default {
       typePay: window.location.pathname.split("/")[2],
       payMode: true,
       modal: false,
+      clientInfo: {
+        userId: "",
+        clientName: "",
+        products: [],
+        phone: "",
+        totalPrice: 0,
+        address: "",
+        note: "",
+      },
     };
   },
 
@@ -86,18 +68,41 @@ export default {
     CartContent,
   },
 
+  async created() {
+    try {
+      const res = await axios.get(`/info/${this.user._id}`);
+
+      this.clientInfo.userId = this.user._id;
+      this.clientInfo.products = this.cart.products;
+
+      this.cart.products.forEach((p) => {
+        this.totalPrice = p.price * p.quantity;
+      });
+      this.clientInfo.clientName = `${res.data.lastName} ${res.data.firstName}`;
+      this.clientInfo.phone = res.data.phone;
+      this.clientInfo.address = res.data.address;
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   methods: {
-    handlePostOrder(e) {
-      e.preventDefault();
-      console.log("post");
+    async handleSubmit() {
+      this.totalPrice = this.makeMoney;
+      try {
+        const res = await axios.post(`/order`, this.clientInfo);
+        console.log(res);
+        alert("Đặt hàng thành công");
+        this.$router.push("/customer/order");
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 
   computed: {
-    makeMoney() {
-      const route = useRoute();
-      return route.query.money;
-    },
+    ...mapGetters(["user", "cart"]),
   },
 };
 </script>

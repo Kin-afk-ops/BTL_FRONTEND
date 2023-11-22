@@ -39,14 +39,6 @@
   text-decoration: line-through;
 }
 
-.list__item--star i {
-  color: #ccc;
-}
-
-.list__item--start span {
-  color: coral;
-}
-
 .list__item--percent {
   position: absolute;
   width: 50px;

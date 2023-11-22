@@ -9,35 +9,60 @@
     <div class="customer__info--info">
       <p>
         <i class="fa-solid fa-circle-info"></i>
-        ...
+        {{ userName }}
       </p>
       <p>
         <i class="fa-solid fa-envelope"></i>
-        linh@gmail.com
+        {{ user.email }}
       </p>
       <p>
         <i class="fa-solid fa-phone"></i>
-        0589443320
+        {{ userInfo.phone }}
       </p>
       <p>
         <i class="fa-solid fa-person"></i>
-        Nam
+        {{ userInfo.sex }}
       </p>
       <p>
         <i class="fa-solid fa-cake-candles"></i>
-        22-08-2003
+        {{ birthday }}
       </p>
       <p>
         <i class="fa-solid fa-location-dot"></i>
-        Can Tho
+        {{ userInfo.address }}
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { mapGetters } from "vuex";
 export default {
   name: "CustomerContentInfo",
+
+  data() {
+    return {
+      userInfo: {},
+      userName: "",
+      birthday: "",
+    };
+  },
+
+  async created() {
+    try {
+      const res = await axios.get(`info/${this.user._id}`);
+      this.userInfo = res.data;
+      this.userName = `${this.userInfo.lastName} ${this.userInfo.firstName}`;
+      this.birthday = this.userInfo.birthday.split("-").reverse().join("-");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  computed: {
+    ...mapGetters(["user"]),
+  },
 };
 </script>
 

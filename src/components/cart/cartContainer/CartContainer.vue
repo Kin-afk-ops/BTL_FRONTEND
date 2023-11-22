@@ -1,10 +1,11 @@
 <template>
   <div>
-    <cart-content @change-money="changeMoney" />
-    <cart-pay :money="money" :length="lengthSelected" />
+    <cart-content />
+    <cart-pay :money="money" />
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 import CartContent from "./cartContent/CartContent.vue";
 import CartPay from "./cartPay/CartPay.vue";
 
@@ -16,21 +17,18 @@ export default {
     };
   },
 
+  created() {
+    this.cart.products.forEach((p) => {
+      this.money = p.price * p.quantity;
+    });
+  },
+
   components: {
     CartContent,
     CartPay,
   },
-
-  methods: {
-    changeMoney(selected) {
-      this.money = 0;
-      this.lengthSelected = selected.length;
-      let length = selected.length;
-      while (length > 0) {
-        this.money += 60000;
-        length--;
-      }
-    },
+  computed: {
+    ...mapGetters(["cart"]),
   },
 };
 </script>

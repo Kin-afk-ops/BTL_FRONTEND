@@ -3,6 +3,9 @@
   border-left: 1px solid #ccc;
   max-height: 600px;
   overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .customer__notification--list {
@@ -15,6 +18,8 @@
   background-color: #ffffcc;
   cursor: pointer;
   transition: 0.3s linear;
+  display: flex;
+  justify-content: space-between;
 }
 
 .customer__notification--item:hover {

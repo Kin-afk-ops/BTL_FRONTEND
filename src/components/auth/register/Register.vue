@@ -88,6 +88,11 @@ export default {
       passwordMessage: "",
       confirmPasswordMessage: "",
       isSubmit: true,
+
+      cartForm: {
+        userId: "",
+        products: [],
+      },
     };
   },
   methods: {
@@ -119,8 +124,10 @@ export default {
         try {
           const res = await axios.post("/auth/register", this.registerForm);
           this.userInfoForm.userId = res.data._id;
+          this.cartForm.userId = res.data._id;
           await axios.post("/info", this.userInfoForm);
           await axios.post(`/notification/${res.data._id}`);
+          await axios.post(`/cart`, this.cartForm);
 
           alert("Đăng kí thành công! Hãy đăng nhập ngay");
           this.$router.push("/auth/login");

@@ -2,16 +2,20 @@
   padding-bottom: 0 !important;
 }
 
+.filer div {
+  height: 60px;
+}
+
 .filer__list {
   display: flex;
   align-items: center;
   list-style: none;
-  height: 60px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
-.filer__list a {
+.filer__list div {
   height: 100%;
   flex: 1;
 }

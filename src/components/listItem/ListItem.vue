@@ -1,36 +1,39 @@
 <template>
-  <router-link
-    to="/product/khong-diet-khong-sinh-dung-so-hai.html"
-    class="link"
-  >
-    <div class="list__item">
-      <img
-        src="https://cdn0.fahasa.com/media/catalog/product/8/9/8935278607311.jpg"
-        alt=""
-      />
+  <div v-if="book">
+    <router-link :to="'/product/' + book._id" class="link">
+      <div class="list__item">
+        <img :src="book.image.path" alt="" />
 
-      <div class="list__item--text">
-        <p class="list__item--title">
-          Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-        </p>
+        <div class="list__item--text">
+          <p class="list__item--title">
+            {{ book.name }}
+          </p>
 
-        <p class="list__item--price">66.000 đ</p>
-        <p class="list__item--discount">100.000 đ</p>
-
-        <div class="list__item--star">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <span>(0)</span>
+          <p class="list__item--price">{{ currentPrice }} đ</p>
+          <p class="list__item--discount">{{ book.price }}</p>
         </div>
-      </div>
 
-      <div class="list__item--percent">40%</div>
-    </div>
-  </router-link>
+        <div class="list__item--percent">{{ book.discount }}%</div>
+      </div>
+    </router-link>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ["book"],
+  data() {
+    return {};
+  },
+
+  computed: {
+    currentPrice() {
+      return this.book.price - (this.book.price * this.book.discount) / 100;
+    },
+  },
+};
+</script>
+
 <style>
 @import "./listItem.css";
 </style>

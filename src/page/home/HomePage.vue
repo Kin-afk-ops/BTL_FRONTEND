@@ -1,30 +1,39 @@
 <template>
   <div class="grid wide">
     <slide-top />
-    <categories />
-    <list :title="title[0]" :icon="icon[0]" />
-    <list :title="title[1]" :icon="icon[1]" />
+    <!-- <categories /> -->
+    <keep-alive
+      ><list :title="title" :bookData="bookData" :type="type"
+    /></keep-alive>
   </div>
 </template>
 <script>
+import axios from "axios";
 import SlideTop from "../../components/slide/SlideTop.vue";
-import Categories from "../../components/categories/Categories.vue";
+// import Categories from "../../components/categories/Categories.vue";
 import List from "../../components/list/List.vue";
+
 export default {
   data: () => {
     return {
-      title: ["Sách mới nhất", "Phật giáo"],
-      icon: ["fa-solid fa-dharmachakra", "fa-solid fa-fire"],
+      title: "Sách mới nhất",
+      bookData: [],
+      type: "homePage",
     };
   },
 
   components: {
     SlideTop,
-    Categories,
+    // Categories,
     List,
   },
-  created() {
-    console.log(this.$store);
+  async created() {
+    try {
+      const res = await axios.get("/book");
+      this.bookData = res.data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

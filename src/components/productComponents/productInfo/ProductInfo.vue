@@ -1,5 +1,5 @@
 <template>
-  <div class="product__info main__container">
+  <div class="product__info main__container" v-if="bookInfoData.supplier">
     <h2 class="main__title">Thông tin sản phẩm</h2>
 
     <div class="product__info--content row no-gutters">
@@ -16,15 +16,15 @@
           <p>Hình thức</p>
         </div>
         <div class="col c-6">
-          <p>8935278607311</p>
-          <p>Saigon Book</p>
-          <p>Thích Nhất Hạnh</p>
-          <p>Thế Giới</p>
-          <p>2022</p>
-          <p>250</p>
-          <p>20.5 x 13 cm x 1.2</p>
-          <p>224</p>
-          <p>Bìa Mềm</p>
+          <p>{{ bookInfoData.bookId }}</p>
+          <p>{{ bookInfoData.infoBook.supplier }}</p>
+          <p>{{ bookInfoData.infoBook.auth }}</p>
+          <p>{{ bookInfoData.infoBook.publisher }}</p>
+          <p>{{ bookInfoData.infoBook.publishingYear }}</p>
+          <p>{{ bookInfoData.infoBook.weight }}</p>
+          <p>{{ bookInfoData.infoBook.size }}</p>
+          <p>{{ bookInfoData.infoBook.numberPage }}</p>
+          <p>{{ bookInfoData.infoBook.form }}</p>
         </div>
       </div>
     </div>
@@ -32,7 +32,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: ["bookInfoData"],
+
+  created() {
+    console.log(this.bookInfoData);
+  },
+};
 </script>
 <style>
 @import "./productInfo.css";

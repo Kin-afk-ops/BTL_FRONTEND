@@ -16,249 +16,22 @@
     </div>
     <hr />
 
-    <div class="cart__content--container">
-      <ul class="cart__content--container-list">
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              v-if="!payMode"
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="1"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022) 1
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
-
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="2"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
-
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="3"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
-
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="4"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
-
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="5"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
-
-        <li class="cart__content--container-item row no-gutters">
-          <div
-            class="cart__content--container-item-input display__flex--center c-1"
-          >
-            <input
-              type="checkbox"
-              @change="handleChangMoney($event)"
-              value="6"
-              v-model="selected"
-            />
-          </div>
-          <img
-            class="img__main c-1"
-            src="https://cdn0.fahasa.com/media/catalog/product//8/9/8935278607311.jpg"
-            alt=""
-          />
-          <div class="cart__content--container-item-info c-4">
-            <p class="info__title">
-              Không Diệt Không Sinh Đừng Sợ Hãi (Tái Bản 2022)
-            </p>
-            <div class="info__money">
-              <p class="info__money--all">60.000đ</p>
-              <p class="info__money--discount">110.000đ</p>
-            </div>
-          </div>
-          <div
-            class="cart__content--container-item-quality display__flex--center c-2"
-          >
-            <div>1</div>
-          </div>
-
-          <div
-            class="cart__content--container-item-money display__flex--center c-2"
-          >
-            60.000đ
-          </div>
-        </li>
-        <hr />
+    <div class="cart__content--container" v-if="length !== 0">
+      <ul class="cart__content--container-list" v-if="products">
+        <div v-for="product in products" :key="product._id">
+          <cart-item :bookId="product.productId" :quantity="product.quantity" />
+        </div>
       </ul>
     </div>
     <cart-delete :selected="selected" :modal="modal" @hidden="modal = false" />
   </div>
 </template>
 <script>
+import axios from "axios";
+
 import CartDelete from "./CartDelete";
+import CartItem from "./CartItem";
+import { mapGetters } from "vuex";
 
 export default {
   props: ["payMode"],
@@ -269,11 +42,30 @@ export default {
       selected: [],
       data: [1, 2, 3, 4, 5, 6],
       modal: false,
+      length: 0,
+      cart: {},
+      products: [],
+      totalPrice: 0,
     };
   },
 
   components: {
     CartDelete,
+    CartItem,
+  },
+  async created() {
+    try {
+      const res = await axios.get(`/cart/find/${this.user._id}`);
+      this.cart = res.data;
+      this.length = this.cart.products.length;
+      this.products = this.cart.products;
+      this.$store.dispatch("cart", this.cart);
+
+      console.log(this.totalPrice);
+      console.log(this.products);
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   methods: {
@@ -293,13 +85,13 @@ export default {
       }
     },
 
-    handleChangMoney(event) {
-      if (event.target.checked) {
-        this.$emit("change-money", this.selected);
-      } else {
-        this.$emit("change-money", this.selected);
-      }
+    changeMoney(selected) {
+      this.$emit("chang-money", selected);
     },
+  },
+
+  computed: {
+    ...mapGetters(["user"]),
   },
 };
 </script>

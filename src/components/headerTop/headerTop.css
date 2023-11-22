@@ -146,12 +146,12 @@
   background-color: #eeeeee;
 }
 
-.header__icon--notify-li i {
+.header__icon--notify-li-icon {
   font-size: 30px;
   color: #ff9933;
 }
 
-.header__icon--notify-li div {
+.header__icon--notify-li-wrap {
   margin-left: 15px;
 }
 

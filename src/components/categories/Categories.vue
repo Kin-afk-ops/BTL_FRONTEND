@@ -11,7 +11,7 @@
     <ul>
       <li v-for="cate in cateInfo" :key="cate._id">
         <img class="categories__img" :src="cate.image.path" :alt="cate.path" />
-        <router-link :to="'products/' + cate.path" class="link"
+        <router-link :to="'productList/' + cate.path" class="link"
           ><p>{{ cate.name }}</p></router-link
         >
       </li>

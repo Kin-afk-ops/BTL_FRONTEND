@@ -169,6 +169,8 @@ export default {
         `/info/${this.userInfoId}`,
         this.userInfoForm
       );
+      alert("Thay đổi thành công");
+      this.modal = false;
       console.log(res);
     },
   },

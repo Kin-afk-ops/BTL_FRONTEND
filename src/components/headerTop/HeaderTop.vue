@@ -16,8 +16,9 @@
           type="text"
           class="header__center--input"
           placeholder="Tìm kiếm sản phẩm mong muốn..."
+          v-model="search"
         />
-        <div class="header__center--icon">
+        <div class="header__center--icon" @click="handleSearch">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
@@ -26,7 +27,9 @@
         <div class="header__icon">
           <i class="fa-solid fa-bell"></i>
           <span>Thông báo</span>
-          <div class="header__icon--total">2</div>
+          <div class="header__icon--total" v-if="length !== 0">
+            {{ length }}
+          </div>
 
           <ul class="header__icon--notify-list">
             <div class="header__icon--notify-header">
@@ -38,22 +41,29 @@
               >
             </div>
             <hr />
-            <li class="header__icon--notify-li">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-              <div>
-                <span class="header__icon--notify-li-title"
-                  >Cập nhật Email ngay để nhận quà từ toidocsach.com</span
-                >
-                <span class="header__icon--notify-li-content"
-                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Maxime doloribus reiciendis adipisci nemo, velit facere
-                </span>
-              </div>
+            <li
+              class="header__icon--notify-li"
+              v-for="noti in notification.notify"
+              :key="noti._id"
+            >
+              <router-link :to="noti.path" class="link display__flex--center">
+                <i
+                  class="header__icon--notify-li-icon fa-solid fa-triangle-exclamation"
+                ></i>
+                <div class="header__icon--notify-li-wrap">
+                  <span class="header__icon--notify-li-title">{{
+                    noti.title
+                  }}</span>
+                  <span class="header__icon--notify-li-content">
+                    {{ noti.content }}
+                  </span>
+                </div>
+              </router-link>
             </li>
           </ul>
         </div>
 
-        <router-link to="/cart" class="link">
+        <router-link :to="'/cart/' + user._id" class="link">
           <div class="header__icon">
             <i class="fa-solid fa-cart-shopping"></i>
             <span> Giỏ hàng</span>
@@ -123,15 +133,25 @@ export default {
     return {
       username: "",
       email: "",
+      notification: {},
+      length: 0,
+      search: "",
     };
   },
 
   async created() {
-    const res2 = await axios.get(`info/${this.user._id}`);
-    res2.data.lastName === " " || res2.data.firstName === " "
-      ? (this.username = "...")
-      : (this.username = `${res2.data.lastName} ${res2.data.firstName}`);
-    this.email = this.user.email;
+    try {
+      const res2 = await axios.get(`info/${this.user._id}`);
+      res2.data.lastName === " " || res2.data.firstName === " "
+        ? (this.username = "...")
+        : (this.username = `${res2.data.lastName} ${res2.data.firstName}`);
+      this.email = this.user.email;
+      const res1 = await axios.get(`/notification/${this.user._id}`);
+      this.notification = res1.data;
+      this.length = res1.data.notify.length;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   methods: {
@@ -140,6 +160,10 @@ export default {
       localStorage.removeItem("userId");
       this.$store.dispatch("user", null);
       this.$router.push("/auth/login");
+    },
+
+    handleSearch() {
+      this.$router.push(`productList/${this.search}`);
     },
   },
 

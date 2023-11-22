@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import Home from "../page/home/HomePage";
-import Products from "../page/products/ProductsPage";
+import ProductList from "../page/productList/ProductsPage";
 import Customer from "../page/customer/CustomerPage";
 import Product from "../page/product/ProductPage";
 import Cart from "../page/cart/CartPage";
@@ -18,15 +18,16 @@ const routes = [
     },
   },
   {
-    path: "/products",
+    path: "/productList",
+    name: "Products",
     components: {
-      default: Products,
+      default: ProductList,
       "header-top": () => import("../components/headerTop/HeaderTop"),
       "footer-bottom": () => import("../components/footerBottom/FooterBottom"),
     },
     children: [
       {
-        path: ":item",
+        path: ":search",
         component: () => import("../components/list/List"),
       },
     ],
@@ -88,6 +89,7 @@ const routes = [
   },
   {
     path: "/product",
+    name: "Product",
     components: {
       default: Product,
       "header-top": () => import("../components/headerTop/HeaderTop"),
@@ -95,31 +97,15 @@ const routes = [
     },
     children: [
       {
-        path: ":path",
+        path: ":bookId",
         components: {
           "product-to-buy": () =>
             import("../components/productComponents/productToBuy/ProductToBuy"),
-
-          "product-list-auth": () =>
-            import("../components//listSlide/ListSlide"),
-
-          "product-list-categories": () =>
-            import("../components/listSlide/ListSlide"),
 
           "product-info": () =>
             import("../components/productComponents/productInfo/ProductInfo"),
           "product-desc": () =>
             import("../components/productComponents/productDesc/ProductDesc"),
-
-          "product-evaluate": () =>
-            import(
-              "../components/productComponents/productEvaluate/ProductEvaluate"
-            ),
-
-          "product-comment": () =>
-            import(
-              "../components/productComponents/productComment/ProductComment"
-            ),
         },
       },
     ],

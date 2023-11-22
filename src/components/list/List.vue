@@ -6,23 +6,16 @@
     <hr />
 
     <div class="row list__container">
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
-      <div class="col l-2-4"><list-item /></div>
+      <div v-for="book in bookData" :key="book._id" class="col l-2-4">
+        <keep-alive><list-item :book="book" /></keep-alive>
+      </div>
     </div>
 
-    <div class="list__btn" v-if="homeList">
-      <router-link to="/products/tat-ca" class="link"
+    <!-- <div class="list__btn" v-if="type === 'homePage'">
+      <router-link to="/productList/tat-ca" class="link"
         ><button>Xem thêm</button></router-link
       >
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -34,14 +27,14 @@
 import ListItem from "../listItem/ListItem.vue";
 
 export default {
+  props: ["title", "bookData", "type"],
+  setup(props) {
+    console.log(props.bookData);
+  },
   data() {
     return {
-      homeList: true,
+      bookList: [],
     };
-  },
-
-  props: {
-    title: String,
   },
 
   components: {
